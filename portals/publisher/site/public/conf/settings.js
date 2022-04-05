@@ -38,6 +38,7 @@ const AppConfig = {
                     + ' application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,'
                     + ' application/vnd.oasis.opendocument.text, application/vnd.oasis.opendocument.spreadsheet,'
                     + ' application/json, application/x-yaml, .md',
+        minScopesToLogin: ['apim:api_workflow_view','apim:api_workflow_approve','apim:tenantInfo','apim:admin_settings'],
     },
     serviceCatalogDefinitionTypes: {
         OAS2: 'Swagger',

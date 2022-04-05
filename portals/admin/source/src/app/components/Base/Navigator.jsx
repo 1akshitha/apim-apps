@@ -86,6 +86,11 @@ function Navigator(props) {
     && _scopes.includes('apim:admin_settings')
     && _scopes.length === 5;
 
+    const hasWorkflowViewPermission = _scopes.includes('apim:api_workflow_view');
+    if (!hasWorkflowViewPermission) {
+        routeMenuMapping = RouteMenuMapping(intl).filter((menu) => menu.id !== 'Tasks');
+    }
+
     if (isWorkflowManager) {
         const { location: { pathname } } = history;
         if (pathname.indexOf('dashboard') !== -1) {
